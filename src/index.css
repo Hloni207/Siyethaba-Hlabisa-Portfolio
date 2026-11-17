@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-primary: #141210;
+    --bg-secondary: #1a1816;
+    --bg-card: #1e1b18;
+    --text-primary: #f5f3f0;
+    --text-secondary: #a39b8f;
+    --border-color: rgba(255, 255, 255, 0.08);
+    --peach-accent: #E28D69;
+    --peach-light: #f7a683;
+  }
+
+  .light {
+    --bg-primary: #FAF8F5;
+    --bg-secondary: #F3EFEA;
+    --bg-card: #FFFFFF;
+    --text-primary: #181614;
+    --text-secondary: #746C62;
+    --border-color: rgba(0, 0, 0, 0.08);
+    --peach-accent: #D4724B;
+    --peach-light: #E28D69;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #141210;
+}
+::-webkit-scrollbar-thumb {
+  background: #2d2925;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #47413b;
+}
+
+/* Smooth accordion transition helper */
+.accordion-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 350ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.accordion-content.open {
+  grid-template-rows: 1fr;
+}
+.accordion-inner {
+  overflow: hidden;
+}
